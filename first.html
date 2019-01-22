@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="answer"></div>    
+<script>
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = false;
+
+xhr.addEventListener("load", function () {
+   console.log(this.responseText);
+   var x=this.responseText;
+   var a=document.getElementById("answer");
+   var t=document.createTextNode(x);
+   a.append(t);
+  }
+);
+var proxy = 'https://cors-anywhere.herokuapp.com/';
+var url='https://md5decrypt.net/en/Api/api.php?word=password&hash_type=md5&email=aisf.khan.399%40gmail.com&code=72f1860c47d6dd7c';
+xhr.open("GET",proxy+url);
+xhr.send();
+</script>
+</body>
+</html>
